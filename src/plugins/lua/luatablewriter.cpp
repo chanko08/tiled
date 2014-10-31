@@ -136,6 +136,18 @@ void LuaTableWriter::writeQuotedKeyAndValue(const QString &key,
     m_newLine = false;
     m_valueWritten = true;
 }
+ 
+ void LuaTableWriter::writeQuotedKeyAndUnquotedValue(const QString &key,
+                                            const QString &value)
+ {
+    prepareNewLine();
+    write('[');
+    write(quote(key).toUtf8());
+    write("] = ");
+    write(value.toUtf8());
+    m_newLine = false;
+    m_valueWritten = true;
+ }
 
 void LuaTableWriter::writeKeyAndUnquotedValue(const QByteArray &key,
                                               const QByteArray &value)

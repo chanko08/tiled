@@ -62,6 +62,7 @@ public:
     void writeQuotedKeyAndValue(const QString &key, const QString &value);
     void writeKeyAndUnquotedValue(const QByteArray &key,
                                   const QByteArray &value);
+    void writeQuotedKeyAndUnquotedValue(const QString &key, const QString &value);
 
     void setSuppressNewlines(bool suppressNewlines);
     bool suppressNewlines() const;

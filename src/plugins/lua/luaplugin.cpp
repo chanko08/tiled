@@ -169,7 +169,7 @@ void LuaPlugin::writeProperties(LuaTableWriter &writer,
     Properties::const_iterator it = properties.constBegin();
     Properties::const_iterator it_end = properties.constEnd();
     for (; it != it_end; ++it)
-        writer.writeQuotedKeyAndValue(it.key(), it.value());
+        writer.writeQuotedKeyAndUnquotedValue(it.key(), it.value());
 
     writer.writeEndTable();
 }
